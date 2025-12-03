@@ -212,7 +212,7 @@ export function ChatInterface({ activeCategory, activeType }: ChatInterfaceProps
                   <ReactMarkdown 
                     remarkPlugins={[remarkGfm]}
                     components={{
-                      pre: ({...props}) => <div className="overflow-auto w-full my-3 bg-[#1e1f20] p-4 rounded-xl border border-[#333]" {...props} />,
+                      pre: ({...props}) => <pre className="overflow-auto w-full my-3 bg-[#1e1f20] p-4 rounded-xl border border-[#333]" {...props} />,
                       code: ({...props}) => <code className="bg-[#2b2c2d] px-1.5 py-0.5 rounded text-sm font-mono text-indigo-300" {...props} />
                     }}
                   >

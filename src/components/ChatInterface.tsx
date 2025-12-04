@@ -286,13 +286,7 @@ export function ChatInterface({ activeCategory, activeType }: ChatInterfaceProps
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               onPaste={handlePaste}
-              placeholder={
-                activeType === "technical"
-                  ? "Paste chart (Ctrl+V) or ask about technical indicators..."
-                  : activeType === "fundamental"
-                  ? "Ask about a coin's long-term potential..."
-                  : "Ask about recent crypto news..."
-              }
+              placeholder="Tanyakan apa saja..."
               className="flex-1 bg-transparent border-none text-white placeholder-gray-500 focus:ring-0 resize-none max-h-32 py-3 px-2 text-[15px] scrollbar-thin scrollbar-thumb-gray-600"
               rows={1}
             />

@@ -29,7 +29,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col relative">
         {/* Header with Hamburger */}
-        <div className="absolute top-4 left-4 z-30">
+        <div className="fixed top-4 right-4 z-50">
           <button 
             onClick={() => setIsSidebarOpen(true)}
             className="p-2 text-gray-400 hover:text-white bg-black/50 rounded-full hover:bg-zinc-900 transition-colors"

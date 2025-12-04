@@ -69,8 +69,8 @@ export function Sidebar({ activeCategory, activeType, onSelect, isOpen, setIsOpe
 
       {/* Sidebar */}
       <div className={cn(
-        "fixed inset-y-0 left-0 z-50 w-72 bg-black flex flex-col transition-transform duration-300 transform",
-        isOpen ? "translate-x-0" : "-translate-x-full"
+        "fixed inset-y-0 right-0 z-50 w-72 bg-black flex flex-col transition-transform duration-300 transform",
+        isOpen ? "translate-x-0" : "translate-x-full"
       )}>
         {/* Header */}
         <div className="p-4 flex items-center justify-between">

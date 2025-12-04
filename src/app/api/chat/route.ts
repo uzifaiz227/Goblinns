@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         systemInstruction = `Anda adalah Goblinns, AI Analis Teknikal ${context} Profesional dengan disiplin tinggi.
         Tugas anda adalah melakukan "Deep Technical Analysis" berdasarkan data yang diberikan.
         
-        PENTING: Karena anda adalah model teks, jika user meminta analisa chart (gambar), anda harus meminta user untuk mendeskripsikan chart tersebut atau memberikan data harga/indikator secara manual, karena saat ini anda belum bisa melihat gambar secara langsung.
+        PENTING: Lakukan analisa mendalam terhadap chart yang diberikan. Identifikasi pola, indikator, dan sinyal trading.
 
         PROSES BERPIKIR (Lakukan secara internal, lalu output sesuai format):
         1.  **IDENTIFIKASI DATA**:
@@ -97,10 +97,26 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Invalid analysis type" }, { status: 400 });
     }
 
-    const messages = [
-      { role: "system", content: systemInstruction },
-      { role: "user", content: prompt }
+    const messages: { role: string; content: string | any[] }[] = [
+      { role: "system", content: systemInstruction }
     ];
+
+    if (image) {
+      messages.push({
+        role: "user",
+        content: [
+          { type: "text", text: prompt || "Analyze this image" },
+          {
+            type: "image_url",
+            image_url: {
+              url: `data:image/jpeg;base64,${image}`
+            }
+          }
+        ]
+      });
+    } else {
+      messages.push({ role: "user", content: prompt });
+    }
 
     const result = await chatWithDeepSeek(messages);
 

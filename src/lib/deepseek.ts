@@ -1,7 +1,7 @@
 export const DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions";
 export const DEEPSEEK_MODEL = "deepseek-chat";
 
-export async function chatWithDeepSeek(messages: { role: string; content: string }[]) {
+export async function chatWithDeepSeek(messages: { role: string; content: string | any[] }[]) {
   const apiKey = process.env.DEEPSEEK_API_KEY;
 
   if (!apiKey) {

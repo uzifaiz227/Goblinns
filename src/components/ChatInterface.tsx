@@ -91,7 +91,7 @@ export function ChatInterface({ activeCategory, activeType }: ChatInterfaceProps
           category: activeCategory,
           type: activeType,
           prompt: input,
-          // image: currentImage ? currentImage.split(",")[1] : undefined, // DeepSeek V3 text-only
+          image: currentImage ? currentImage.split(",")[1] : undefined,
         }),
       });
 

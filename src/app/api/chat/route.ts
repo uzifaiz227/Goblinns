@@ -3,7 +3,7 @@ import { chatWithDeepSeek } from "@/lib/deepseek";
 
 export async function POST(req: NextRequest) {
   try {
-    const { type, prompt, category = "crypto" } = await req.json();
+    const { type, prompt, image, category = "crypto" } = await req.json();
 
     let systemInstruction = "";
     const currentDate = new Date().toLocaleDateString("id-ID", {

@@ -84,14 +84,14 @@ export function ChatInterface({ activeCategory, activeType }: ChatInterfaceProps
     setSelectedImage(null); 
 
     try {
-      const response = await fetch("/api/gemini", {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           category: activeCategory,
           type: activeType,
-          prompt: input || "Analyze this image",
-          image: currentImage ? currentImage.split(",")[1] : undefined,
+          prompt: input,
+          // image: currentImage ? currentImage.split(",")[1] : undefined, // DeepSeek V3 text-only
         }),
       });
 

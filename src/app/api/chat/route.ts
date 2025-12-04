@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
           {
             type: "image_url",
             image_url: {
-              url: `data:image/jpeg;base64,${image}`
+              url: image
             }
           }
         ]

@@ -9,4 +9,4 @@ export const getGeminiClient = () => {
   return new GoogleGenerativeAI(API_KEY);
 };
 
-export const MODEL_NAME = "gemini-2.5-flash";
+export const MODEL_NAME = "gemini-1.5-flash";
